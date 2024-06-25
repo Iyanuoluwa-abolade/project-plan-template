@@ -27,6 +27,7 @@ Product Spec
 
 User Stories
 
+  
 Required
 As a parent, I want to browse profiles of children available for adoption, so that I can find a child whose profile matches my adoption criteria.
 As a parent, I want to express interest in a specific child's profile, so that I can initiate the adoption process and communicate with the orphanage/nuns.
@@ -60,10 +61,10 @@ User password are encrypted in database
 Website has clean and intuitive navigation interface
 
 A brief introduction into the web app features:
-Parents fill out detailed questionnaires about their lifestyle and adoption preferences
-Children's profiles include multimedia content such as videos showcasing their personality, talents, and daily activities
-Parents receive notifications when there are updates on children they've expressed interest in, such as new photos or progress reports
-The platform offers a secure document management system where parents can upload and share adoption-related documents with the orphanage/nuns
+- Parents fill out detailed questionnaires about their lifestyle and adoption preferences
+- Children's profiles include multimedia content such as videos showcasing their personality, talents, and daily activities
+- Parents receive notifications when there are updates on children they've expressed interest in, such as new photos or progress reports
+- The platform offers a secure document management system where parents can upload and share adoption-related documents with the orphanage/nuns
 
 
 Screen Archetypes:
