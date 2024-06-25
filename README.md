@@ -30,18 +30,27 @@ User Stories
   
 Required
 As a parent, I want to browse profiles of children available for adoption, so that I can find a child whose profile matches my adoption criteria.
+
 As a parent, I want to express interest in a specific child's profile, so that I can initiate the adoption process and communicate with the orphanage/nuns.
+
 As a nun/orphanage staff member, I want to upload multimedia content such as photos and videos to children's profiles, so that potential parents can gain a deeper understanding of each child's personality and interests.
+
 As a nun/orphanage staff member, I want to communicate with approved parents through the platform to schedule meetings or interviews, so that we can facilitate the adoption process effectively.
+
 As a nun/orphanage staff member, I want to manage and update profiles of children available for adoption on the platform, so that potential parents can access accurate information.
 
 
 Optional
 As a parent, I want to receive guidance and support materials through the platform, such as FAQs and adoption guides, to assist me in navigating the adoption journey.
+
 As a nun/orphanage staff member, I want to communicate with approved parents through the platform to schedule meetings or interviews, so that we can facilitate the adoption process effectively.
+
 As a parent, I want to participate in virtual meetings or webinars organized by the orphanage/nuns, so that I can learn more about the adoption process and child care.
+
 As a parent, I want to receive notifications about updates on children I've expressed interest in, such as new photos or progress reports, so that I can stay informed throughout the adoption process.
+
 As a nun/orphanage staff member, I want to receive notifications about new parent applications and expressions of interest in children, so that I can promptly respond and manage inquiries.
+
 As a nun/orphanage staff member, I want to gather feedback from parents about their adoption experience through the platform, so that we can continuously improve our services and support for families.
 
 User Personas
@@ -157,13 +166,14 @@ Using a ranking or matching algorithm like Gale-Shapley to create matches betwee
 How:
 We will write a custom ranking/matching algorithm on the backend that matches adopters with orphans given the orphan’s preferences and the adopter’s preferences.
 
-Technical Challenge #2 - Caching to improve latency of media extraction
+Technical Challenge #2 - Segment locations using geohashing algorithm
 
 What:
-Since this is an app that heavily uses media (images, video) for profiles, we can use a CDN or some cache to speed up pulling the images.
+When this app grows to millions of users, pulling the entire database of coordinates is unscalable. We can use a geohashing algorithm to partition the map of coordinates, and when the ranking request is made, we can only pull coordinates in the adjacent segments.
 
 How:
-Use a CDN - When media files of the orphans or documents are first requested, the CDN fetches them from the origin server (where the files are stored like cloud storage or application server). https://www.cloudflare.com/
+Implement a geohashing algorithm (https://www.pubnub.com/guides/what-is-geohashing/), use the geohash as a key to store locations, and pull that geohash key’s locations when making ranking requests.
+
 
 Database Integration
 
